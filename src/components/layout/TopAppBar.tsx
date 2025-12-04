@@ -138,7 +138,11 @@ const TopAppBar: React.FC = () => {
             sx={{ mr: { xs: 0.5, sm: 1 }, p: { xs: 0.75, sm: 1 } }}
             title="Toggle theme"
           >
-            {mode === 'dark' ? <LightModeIcon sx={{ fontSize: { xs: 18, sm: 24 } }} /> : <DarkModeIcon sx={{ fontSize: { xs: 18, sm: 24 } }} />}
+            {mode === 'dark' ? (
+              <LightModeIcon sx={{ fontSize: { xs: 18, sm: 24 } }} />
+            ) : (
+              <DarkModeIcon sx={{ fontSize: { xs: 18, sm: 24 } }} />
+            )}
           </IconButton>
 
           <IconButton
@@ -162,7 +166,11 @@ const TopAppBar: React.FC = () => {
           >
             <Avatar
               src={user?.avatarUrl}
-              sx={{ width: { xs: 28, sm: 32 }, height: { xs: 28, sm: 32 }, bgcolor: 'primary.main' }}
+              sx={{
+                width: { xs: 28, sm: 32 },
+                height: { xs: 28, sm: 32 },
+                bgcolor: 'primary.main',
+              }}
             >
               {user?.avatar || 'U'}
             </Avatar>
