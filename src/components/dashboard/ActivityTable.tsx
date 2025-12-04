@@ -22,11 +22,7 @@ import {
   Button,
   TableSortLabel,
 } from '@mui/material';
-import {
-  ArrowUpward,
-  ArrowDownward,
-  Delete as DeleteIcon,
-} from '@mui/icons-material';
+import { Delete as DeleteIcon } from '@mui/icons-material';
 import { Activity } from '@/types';
 import { deleteActivity } from '@/redux/slices/dashboardSlice';
 
@@ -105,17 +101,23 @@ const ActivityTable: React.FC<ActivityTableProps> = ({ activities }) => {
     setActivityToDelete(null);
   };
 
-  const getSortIcon = (field: SortField) => {
-    if (sortField !== field) return null;
-    return sortDirection === 'asc' ? <ArrowUpward sx={{ fontSize: 16 }} /> : <ArrowDownward sx={{ fontSize: 16 }} />;
-  };
-
   return (
     <>
       <Card sx={{ height: '100%' }}>
         <CardContent sx={{ p: 0, '&:last-child': { pb: 0 } }}>
-          <Box sx={{ px: { xs: 2, sm: 3 }, pt: { xs: 2, sm: 3 }, pb: { xs: 1.5, sm: 2 }, borderBottom: 1, borderColor: 'divider' }}>
-            <Typography variant="h6" sx={{ fontWeight: 600, fontSize: { xs: '1rem', sm: '1.25rem' } }}>
+          <Box
+            sx={{
+              px: { xs: 2, sm: 3 },
+              pt: { xs: 2, sm: 3 },
+              pb: { xs: 1.5, sm: 2 },
+              borderBottom: 1,
+              borderColor: 'divider',
+            }}
+          >
+            <Typography
+              variant="h6"
+              sx={{ fontWeight: 600, fontSize: { xs: '1rem', sm: '1.25rem' } }}
+            >
               Recent Activity
             </Typography>
           </Box>
